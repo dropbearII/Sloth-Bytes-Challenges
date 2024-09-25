@@ -1,4 +1,6 @@
 """
+Weekly Challenge 2024-09-24
+
 You are given the length of a video in minutes. The format is mm:ss (ex: "02:54").
 
 Create a function that takes the video length and return it in seconds.

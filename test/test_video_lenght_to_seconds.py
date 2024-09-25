@@ -14,7 +14,8 @@ print(minutes_to_seconds("01:00"))
     print(minutes_to_seconds("11:23:00"))
 
 """
-import VideoLengthSeconds as v
+
+import video_lenght_to_seconds as v
 
 
 def test_empty_string():
