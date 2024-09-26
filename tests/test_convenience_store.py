@@ -1,5 +1,6 @@
 import convenience_store
 
+
 def test_enough_change():
     assert convenience_store.change_enough([2, 100, 0, 0], 14.11) is False
     assert convenience_store.change_enough([0, 0, 20, 5], 0.75) is True
