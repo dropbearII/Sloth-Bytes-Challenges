@@ -1,4 +1,6 @@
 """
+Weekly Challenge 2024-10-29
+
 Numbers to English
 
 Write a function that accepts a positive integer between 0 and 999 inclusive and returns a string representation of that
@@ -37,7 +39,7 @@ def num_to_eng(num: int) -> [str]:
     tens_twenty_to_ninety: list[str] = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty',
                                         'ninety']
     eng_list: list[str] = []
-    num_length = len(num_str)
+
     if num < 20:
         eng_list.append(zero_to_nineteen[num])
     if num >= 20:
