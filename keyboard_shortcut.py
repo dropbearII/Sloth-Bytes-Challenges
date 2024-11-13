@@ -35,44 +35,22 @@ import re
 
 
 def keyboard_shortcut(phrase: str) -> str:
-    memory: dict[str, str] = {
-        'copied': '',
-        'last shortcut': '',
-    }
     ctrl_C = 'Ctrl \\+ C'
     ctrl_V = 'Ctrl \\+ V'
-
-    copy_start = 0
     p = phrase
     output = ''
     while re.search(ctrl_V, p) is not None:
-        # identify shortcuts in string
         copy = re.search(ctrl_C, p)
         paste = re.search(ctrl_V, p)
-        # print(copy.start(), copy.end(), copy.span(), paste.start(), paste.end(), paste.span())
-        # print(type(copy.start()))
         if copy.end() + 1 == paste.start():
             clipboard = p[0:copy.start()]
-            # print(clipboard)
-            # output = 2*clipboard
-            # output.strip()
-            # print(output)
             modified = clipboard + p[:copy.start()] + p[paste.end() + 1:]
             output = modified
-            # print(p[copy.end():])
-            # input[copy.start():copy.end()] = ''
-            # input.replace('Ctrl + C', '', 1)  # delete Ctrl+C from string
-            # print(input)
         else:
             modified = p[:paste.start()] + p[paste.end() + 1:]
-            # print('else: ' + modified)
-        # clean up useles Ctrl + C
-        # print('test')
         p = modified
 
-    # re.sub('\s{2,}', '', output)
-    output = output.strip()
-
+    output = output.strip()  # clean up string
     return output
 
 
