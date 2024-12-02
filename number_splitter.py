@@ -29,3 +29,9 @@ def num_split(num: int) -> list:
     powers_of_tens = np.fromfunction(lambda i: 10 ** i, (digits.size,), dtype=int)
     digits = digits * np.flip(powers_of_tens) * sign
     return digits.tolist()
+
+
+if __name__ == '__main__':
+    print(f'39 is split into: ', num_split(39))
+    print(f'-434 is split into: ', num_split(-434))
+    print(f'100 is split into: ', num_split(100))
